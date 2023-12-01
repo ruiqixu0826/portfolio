@@ -54,8 +54,6 @@ p {
 }
 
 nav {
-  position: sticky;
-  top: 0;
   margin-bottom: 20px;
 }
 
@@ -89,9 +87,13 @@ nav ul li a:hover {
 }
 
 @media screen and (min-width: 900px) {
-  nav {
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     background-color: #fff;
   }
+
   nav ul li {
     display: inline;
   }

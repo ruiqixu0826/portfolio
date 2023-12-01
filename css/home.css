@@ -48,14 +48,26 @@
   z-index: 100;
 }
 
-#ui-design::before {
+#graphic-design::before {
   content: ""; /* 必须设置，即使没有内容 */
   position: absolute; /* 绝对定位相对于父元素 */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("../images/ui_pre.png") center/contain repeat; /* 设置背景图片 */
+  background: url("../images/home/ui_pre.png") center/contain repeat; /* 设置背景图片 */
+  opacity: 0.5; /* 设置透明度为50% */
+  border-radius: inherit; /* 继承父元素的圆角 */
+}
+
+#computer-vision::before {
+  content: ""; /* 必须设置，即使没有内容 */
+  position: absolute; /* 绝对定位相对于父元素 */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../images/about-me/cv.png") center/cover; /* 设置背景图片 */
   opacity: 0.5; /* 设置透明度为50% */
   border-radius: inherit; /* 继承父元素的圆角 */
 }
@@ -63,11 +75,12 @@
 @media screen and (min-width: 900px) {
   #container {
     display: grid;
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 58px);
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     overflow: visible;
     align-items: end;
+    padding-bottom: 10px;
   }
 
   #profile {
@@ -90,7 +103,7 @@
   #category {
     display: grid;
     grid-column: 2 / -1;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     align-items: stretch;
     justify-items: start;

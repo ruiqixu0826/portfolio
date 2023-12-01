@@ -1,0 +1,101 @@
+/* added */
+#intro-container {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.intro-section {
+  padding: 20px 0;
+}
+
+#general {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+#profile {
+  grid-column: 1;
+  width: 300px;
+}
+
+#dialog {
+  grid-column: 2;
+  width: 300px;
+}
+
+.education-block,
+.project-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.education-info,
+.project-info {
+  flex-basis: 70%;
+}
+
+.project-item img {
+  max-width: 500px;
+}
+
+.time-location {
+  flex-basis: 30%;
+  text-align: right;
+}
+
+time,
+address {
+  font-size: 0.9em;
+  color: #333;
+  display: block; /* 使时间和地址各占一行 */
+}
+
+address {
+  font-style: italic;
+}
+
+.gpa {
+  font-weight: bold;
+}
+
+#more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px; /* 卡片之间的间隔 */
+}
+
+.project-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 400px; /* 或者根据需求调整 */
+}
+
+.project-image {
+  height: 350px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  margin-top: 0;
+}

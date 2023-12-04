@@ -40,7 +40,8 @@
   border-radius: 30px;
 }
 
-.category-link:hover {
+.category-link:hover,
+:focus {
   transform: scale(1.05);
 }
 

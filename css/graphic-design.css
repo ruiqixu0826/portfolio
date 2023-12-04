@@ -54,8 +54,7 @@ button {
   cursor: pointer;
 }
 
-button:hover,
-:focus {
+button:hover {
   background-color: black;
   color: white;
 }

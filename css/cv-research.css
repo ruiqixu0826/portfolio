@@ -56,7 +56,7 @@ img {
 }
 
 .accordion-button.active::after {
-  transform: rotate(90deg); /* Rotate the arrow when active */
+  transform: rotate(90deg) translateX(-25%) translateY(-25%); /* Rotate the arrow when active */
 }
 
 .accordion-button:hover {

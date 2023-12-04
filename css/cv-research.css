@@ -51,6 +51,7 @@ img {
   content: "\25ba"; /* Unicode character for right-pointing arrow */
   font-size: 20px;
   position: absolute;
+  padding-left: 20px;
   transition: transform 0.3s ease;
 }
 

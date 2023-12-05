@@ -52,3 +52,63 @@ function updateImageAndButtons() {
 
 // Initialize the gallery
 updateImageAndButtons();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const submitBtn = document.getElementById("submit-comment");
+  const commentsList = document.getElementById("comments-list");
+
+  submitBtn.addEventListener("click", addComment);
+
+  function addComment() {
+    const commentText = document.getElementById("new-comment").value;
+    if (commentText.trim() === "") return;
+
+    const commentDiv = document.createElement("div");
+    commentDiv.classList.add("comment");
+    commentDiv.textContent = commentText;
+
+    const deleteBtn = document.createElement("span");
+    deleteBtn.classList.add("delete-btn");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.onclick = function () {
+      commentsList.removeChild(commentDiv);
+      updateLocalStorage();
+    };
+
+    commentDiv.appendChild(deleteBtn);
+    commentsList.appendChild(commentDiv);
+
+    updateLocalStorage();
+    document.getElementById("new-comment").value = "";
+  }
+
+  function loadComments() {
+    const comments = JSON.parse(localStorage.getItem("comments")) || [];
+    comments.forEach((comment) => {
+      const commentDiv = document.createElement("div");
+      commentDiv.classList.add("comment");
+      commentDiv.textContent = comment;
+
+      const deleteBtn = document.createElement("span");
+      deleteBtn.classList.add("delete-btn");
+      deleteBtn.textContent = "Delete";
+      deleteBtn.onclick = function () {
+        commentsList.removeChild(commentDiv);
+        updateLocalStorage();
+      };
+
+      commentDiv.appendChild(deleteBtn);
+      commentsList.appendChild(commentDiv);
+    });
+  }
+
+  function updateLocalStorage() {
+    const comments = [];
+    document.querySelectorAll(".comment").forEach((commentDiv) => {
+      comments.push(commentDiv.textContent.replace("Delete", "").trim());
+    });
+    localStorage.setItem("comments", JSON.stringify(comments));
+  }
+
+  loadComments();
+});

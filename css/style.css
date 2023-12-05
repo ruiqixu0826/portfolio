@@ -52,9 +52,16 @@ footer {
 }
 
 a:hover,
-:focus {
+a:focus {
   color: #577d86;
   text-decoration: underline;
+}
+
+.social-links a:hover,
+.social-links a:focus {
+  text-decoration: underline;
+  color: white;
+  border: solid 1px white;
 }
 
 footer p {
